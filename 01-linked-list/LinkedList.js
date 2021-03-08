@@ -8,7 +8,7 @@ class LinkedList {
 
     /* Insert First node */
     insertAtBegininng(data) {
-        this.head = new LinkedListNode(data , this.head);
+        this.head = new LinkedListNode(data, this.head);
         this.size++;
     }
 
@@ -16,11 +16,11 @@ class LinkedList {
     insertAtEnd(data) {
         let node = new LinkedListNode(data);
         let currentNode;
-        if(!this.head) {
+        if (!this.head) {
             this.head = node;
         } else {
             currentNode = this.head;
-            while(currentNode.next) {
+            while (currentNode.next) {
                 currentNode = currentNode.next;
             }
             currentNode.next = node;
@@ -29,31 +29,31 @@ class LinkedList {
     }
 
     /* Insert at index */
-    insertAtIndex(data,index) {
+    insertAtIndex(data, index) {
         // if index is negative
-        if(index<0) {
+        if (index < 0) {
             throw new Error('Index cannot be in negative');
         }
-         // if index is out of range
-        if(index>0 && index>this.size) {
+        // if index is out of range
+        if (index > 0 && index > this.size) {
             throw new Error('Passed index is out of range');
         }
         //If first index the we use insertAtFirst
-        if(index===0) {
+        if (index === 0) {
             this.insertAtBegininng(data);
             return;
         }
         //If last index the we use insertAtEnd
-        if(index===(this.size - 1)) {
+        if (index === (this.size - 1)) {
             this.insertAtEnd(data);
             return;
         }
 
         const node = new LinkedListNode(data);
-        let current,previous;
+        let current, previous;
         current = this.head;
         let count = 0;
-        while(count<index) {
+        while (count < index) {
             previous = current;
             count++;
             current = current.next;
@@ -68,9 +68,9 @@ class LinkedList {
     getAtIndex(index) {
         let current = this.head;
         let count = 0;
-        while(current) {
-            if(count === index) {
-                console.log(`Data at index-${index}::`,current.data);
+        while (current) {
+            if (count === index) {
+                console.log(`Data at index-${index}::`, current.data);
                 return;
             }
             count++;
@@ -81,20 +81,20 @@ class LinkedList {
     /* Remove at index */
     deleteAtIndex(index) {
         // if index is negative
-        if(index<0) {
+        if (index < 0) {
             throw new Error('Index cannot be in negative');
         }
-            // if index is out of range
-        if(index>0 && index>this.size) {
+        // if index is out of range
+        if (index > 0 && index > this.size) {
             throw new Error('Index is out of range');
         }
 
         let current = this.head;
-        let previous, count=0;
-        if(index===0) {
+        let previous, count = 0;
+        if (index === 0) {
             this.head = current.next;
         } else {
-            while(count<index){
+            while (count < index) {
                 count++;
                 previous = current;
                 current = current.next;
@@ -112,11 +112,11 @@ class LinkedList {
 
     /* Print List Data */
     printLinkedListData() {
-        if(this.size === 0) {
+        if (this.size === 0) {
             console.log('Linked List is empty');
         }
         let currentNode = this.head;
-        while(currentNode) {
+        while (currentNode) {
             console.log(currentNode.data);
             currentNode = currentNode.next;
         }
