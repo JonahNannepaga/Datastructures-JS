@@ -11,5 +11,5 @@
 3. Insert at index
 4. Get at index
 5. Delete at index
-6. Clear list
-7. Print list
+6. Clear linked list
+7. Print linked list
