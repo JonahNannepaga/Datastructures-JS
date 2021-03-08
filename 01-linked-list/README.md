@@ -4,7 +4,7 @@
 
 ---
 
-### Operations
+### Methods implemented
 
 1. Insert at beginning
 2. Insert at end
